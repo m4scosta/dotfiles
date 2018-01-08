@@ -24,8 +24,11 @@ Plug 'ntpeters/vim-better-whitespace'
 " Emmet
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript.jsx'] }
 
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+
 " Slim syntax highlighting
-Plug 'slim-template/vim-slim'
+Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 call plug#end()
 
 " General settings
@@ -47,8 +50,8 @@ set wrap                                      " Enable word wrap
 set linebreak                                 " Wrap lines at convenient points
 set listchars=tab:»\ ,space:·                 " Set representation for whitespaces
 set list                                      " Enable listchars
+set tags=.tags                                " Tags files
 set termguicolors                             " Enable terminal true colors
-set tags=.ctags                               " Tags file
 syntax enable                                 " Turn on sintax highlighting
 colorscheme OceanicNext                       " Set theme
 
@@ -119,6 +122,12 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 
+" Move between panes
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Block movements on normalmode
 map <up> <NOP>
 map <down> <NOP>
@@ -127,4 +136,6 @@ map <right> <NOP>
 
 
 " Plugins settings
+
+" Ag
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore "./node_modules/*" --ignore "./log/*"'

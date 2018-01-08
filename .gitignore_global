@@ -1,6 +1,9 @@
-" vim files
-*.swp
+# VIM files
 *.swo
+*.swp
 
-" ctags file
-.ctags
+# Git conflict files
+*.orig
+
+# Ctags files
+.tags

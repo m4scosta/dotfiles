@@ -3,4 +3,49 @@
   name = Marcos Costa
 
 [core]
-  excludesfile = ~/.gitignore_global
+  editor = vim
+  excludesfile = ~/.gitignore
+
+[merge]
+  tool = meld
+
+[alias]
+  st = status -uall
+  co = checkout
+  cam = commit -am
+  caa = commit --amend --no-edit
+  br = branch
+  ps = push
+  psf = push -f
+  pl = pull
+  f = fetch
+  d = diff
+  df = diff --name-only # files
+  ds = diff --staged
+  r = reset
+  rh = reset --hard
+
+  l = log
+  lo = log --oneline
+  l1 = log -1
+  logg = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold cyan)%h%C(reset) - %C(yellow)[%ar]%C(reset) %C(white)%s%C(reset)%C(green bold)%d%C(reset) %C(dim white)- %aN%C(reset)'
+
+  rb = rebase
+  rbi = rebase -i
+  rbc = rebase --continue
+  rba = rebase --abort
+
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  listignored = "!git ls-files -v | grep -e \"^[hsmrck]\""
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+
+[color "diff"]
+  whitespace = red reverse
+
+[push]
+  default = matching
