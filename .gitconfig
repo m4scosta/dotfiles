@@ -1,0 +1,6 @@
+[user]
+  email = costa.marcos.pro@gmail.com
+  name = Marcos Costa
+
+[core]
+  excludesfile = ~/.gitignore_global

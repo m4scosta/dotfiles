@@ -1,0 +1,6 @@
+" vim files
+*.swp
+*.swo
+
+" ctags file
+.ctags
