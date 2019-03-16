@@ -3,32 +3,53 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" local vimrc
+Plug 'MarcWeber/vim-addon-local-vimrc'
+
 " Airline - bottom status line
 Plug 'vim-airline/vim-airline'
 
 " Vim surround - parentheses closing
 Plug 'tpope/vim-surround'
 
-" Ctrlp - Fuzzy file search
+  " Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
+
+" File search
 Plug 'kien/ctrlp.vim'
 
-" Ag - Text search
+" Text search
 Plug 'rking/ag.vim'
 
-" Themes
-Plug 'mhartington/oceanic-next'
+" Vim gitgutter
+Plug 'airblade/vim-gitgutter'
 
-" Better Whitespaces
-Plug 'ntpeters/vim-better-whitespace'
-
-" Emmet
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript.jsx'] }
+" Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 
-" Slim syntax highlighting
+" Themes
+Plug 'mhartington/oceanic-next'
+Plug 'flazz/vim-colorschemes'
+
+" Code completion/generation
+Plug 'valloric/youcompleteme'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript.jsx', 'vue'] }
+
+" ctags update
+Plug 'craigemery/vim-autotag'
+
+" Better Whitespaces
+Plug 'ntpeters/vim-better-whitespace'
+
+" Syntax highlighting
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html', 'vue'] }
+Plug 'elixir-editors/vim-elixir', { 'for': ['ex'] }
+Plug 'vim-scripts/groovy.vim'
+
 call plug#end()
 
 " General settings
@@ -51,7 +72,9 @@ set linebreak                                 " Wrap lines at convenient points
 set listchars=tab:»\ ,space:·                 " Set representation for whitespaces
 set list                                      " Enable listchars
 set tags=.tags                                " Tags files
+set autoread                                  " Reload file when changed outside vim
 set termguicolors                             " Enable terminal true colors
+set encoding=UTF-8                            " Encoding UTF-8
 syntax enable                                 " Turn on sintax highlighting
 colorscheme OceanicNext                       " Set theme
 
@@ -83,6 +106,7 @@ autocmd vimrc BufWritePre * :StripWhitespace   " Remove trailing whitespaces
 autocmd vimrc InsertEnter * :set nocul         " Remove cursorline highlight on insert mode enter
 autocmd vimrc InsertLeave * :set cul           " Add current line highlighting on insert mode leave
 autocmd vimrc FocusGained,BufEnter * checktime " Refresh file when vim gets focus
+autocmd BufEnter * :syntax sync fromstart      " Redo syntax highlighting
 
 " Leader remapping
 let mapleader = '\'
@@ -139,3 +163,18 @@ map <right> <NOP>
 
 " Ag
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore "./node_modules/*" --ignore "./log/*"'
+
+" vim-gitgutter
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+
+" AutoTag
+let g:autotagTagsFile=".tags"
+
+" CtrlP
+let g:ctrlp_custom_ignore="node_modules\|git"
+
+" IndentGuide
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
