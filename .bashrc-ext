@@ -1,0 +1,6 @@
+# load aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+export EDITOR='vim'

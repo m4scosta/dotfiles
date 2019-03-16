@@ -1,0 +1,9 @@
+# Git
+alias gst='git status -uall'
+alias gs='git status -uall'
+alias gut='git'
+alias got='git'
+
+# Other
+alias dkc='docker-compose'
+alias reown='sudo chown `whoami`:`whoami`'

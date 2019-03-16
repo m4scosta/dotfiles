@@ -35,7 +35,7 @@ function install_nvim() {
 
 
 setup_apt && \
-  apt_install curl gimp git htop meld nload pgadmin3 tree && \
+  apt_install curl gimp git htop meld nload pgadmin3 tree cmake python3 python3-dev && \
   install_docker && \
   install_nvim && \
   apt -y autoclean && \
