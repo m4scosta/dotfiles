@@ -110,8 +110,13 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 set smartindent
-set nofoldenable
 set colorcolumn=120
+
+" Code folding
+set foldmethod=syntax
+set foldnestmax=10
+set foldlevel=2
+set nofoldenable
 
 " Disable macro recording
 map q <Nop>
