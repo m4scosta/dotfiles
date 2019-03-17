@@ -3,6 +3,12 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" File type icons
+Plug 'ryanoasis/vim-devicons'
+
+" EasyMotion
+Plug 'easymotion/vim-easymotion'
+
 " local vimrc
 Plug 'MarcWeber/vim-addon-local-vimrc'
 
@@ -12,7 +18,7 @@ Plug 'vim-airline/vim-airline'
 " Vim surround - parentheses closing
 Plug 'tpope/vim-surround'
 
-  " Indent guides
+" Indent guides
 Plug 'nathanaelkane/vim-indent-guides'
 
 " File search
@@ -49,12 +55,22 @@ Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html', 'vue'] }
 Plug 'elixir-editors/vim-elixir', { 'for': ['ex'] }
 Plug 'vim-scripts/groovy.vim'
+Plug 'ap/vim-css-color'
+
+" Syntax checking
+Plug 'scrooloose/syntastic'
+
+" Commenting
+Plug 'tomtom/tcomment_vim'
+
+" Rubocop
+Plug 'ngmy/vim-rubocop'
 
 call plug#end()
 
 " General settings
 set title                                     " Change terminal title
-set number                                    " Show line number
+set relativenumber number                     " Show line number
 set history=500                               " :cmdline history size
 set showcmd                                   " Show completions for cmds
 set noshowmode                                " Hide mode because airline shows it
@@ -97,6 +113,9 @@ set smartindent
 set nofoldenable
 set colorcolumn=120
 
+" Disable macro recording
+map q <Nop>
+
 " Auto commands
 augroup vimrc
   autocmd!
@@ -132,6 +151,9 @@ inoremap <C-v> <Esc>"+pa
 " Move selected lines up and down
 vnoremap <C-Down> :m '>+1<CR>gv=gv
 vnoremap <C-Up> :m '>-2<CR>gv=gv
+
+" Delete line on insert mode
+inoremap <C-d> <esc>ddi
 
 " Tabs in normal and visual mode
 nnoremap <tab> >>
@@ -178,3 +200,21 @@ let g:ctrlp_custom_ignore="node_modules\|git"
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Emmet
+" expand expression on tab
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" Vim rubocop
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop --auto-correct<CR>
