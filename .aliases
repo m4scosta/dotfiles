@@ -7,3 +7,4 @@ alias got='git'
 # Other
 alias dkc='docker-compose'
 alias reown='sudo chown `whoami`:`whoami`'
+alias v='nvim'

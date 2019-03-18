@@ -92,7 +92,7 @@ set autoread                                  " Reload file when changed outside
 set termguicolors                             " Enable terminal true colors
 set encoding=UTF-8                            " Encoding UTF-8
 syntax enable                                 " Turn on sintax highlighting
-colorscheme OceanicNext                       " Set theme
+colorscheme tender                            " Set theme
 
 " Turn off swap files
 set noswapfile
