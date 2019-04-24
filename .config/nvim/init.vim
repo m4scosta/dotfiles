@@ -56,6 +56,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'
 Plug 'elixir-editors/vim-elixir', { 'for': ['ex'] }
 Plug 'vim-scripts/groovy.vim'
 Plug 'ap/vim-css-color'
+Plug 'posva/vim-vue'
 Plug 'b4b4r07/vim-hcl'
 
 " Syntax checking
@@ -202,7 +203,8 @@ let g:gitgutter_eager = 1
 let g:autotagTagsFile=".tags"
 
 " CtrlP
-let g:ctrlp_custom_ignore="node_modules\|git"
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|git|tmp|log|build)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_max_files=0
 
 " IndentGuide
 let g:indent_guides_enable_on_vim_startup = 1

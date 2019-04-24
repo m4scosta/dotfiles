@@ -25,3 +25,5 @@ This command will install the following packages:
 - tree: Command to list files recursively
 
 The command will also configure neovim and command line aliases.
+
+**TODO: document nerd font installation**
