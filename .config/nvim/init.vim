@@ -185,6 +185,9 @@ map <down> <NOP>
 map <left> <NOP>
 map <right> <NOP>
 
+" Set current user as owner of the current file
+cnoremap r!! execute 'silent! !sudo chown `whoami`:`whoami` %' <Bar> edit!<CR>
+
 
 " Plugins settings
 
