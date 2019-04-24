@@ -56,6 +56,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'
 Plug 'elixir-editors/vim-elixir', { 'for': ['ex'] }
 Plug 'vim-scripts/groovy.vim'
 Plug 'ap/vim-css-color'
+Plug 'b4b4r07/vim-hcl'
 
 " Syntax checking
 Plug 'scrooloose/syntastic'
@@ -65,7 +66,6 @@ Plug 'tomtom/tcomment_vim'
 
 " Rubocop
 Plug 'ngmy/vim-rubocop'
-
 call plug#end()
 
 " General settings
