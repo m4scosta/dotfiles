@@ -39,6 +39,8 @@
   unignore = update-index --no-assume-unchanged
   listignored = "!git ls-files -v | grep -e \"^[hsmrck]\""
 
+  wip = "!git add . && git commit -am WIP"
+
 [color "status"]
   added = green
   changed = yellow
