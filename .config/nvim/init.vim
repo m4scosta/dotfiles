@@ -53,7 +53,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " Syntax highlighting
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html', 'vue'] }
-Plug 'elixir-editors/vim-elixir', { 'for': ['ex'] }
+Plug 'elixir-editors/vim-elixir'
 Plug 'vim-scripts/groovy.vim'
 Plug 'ap/vim-css-color'
 Plug 'posva/vim-vue'
