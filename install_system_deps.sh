@@ -21,7 +21,7 @@ function install_docker() {
 }
 
 function install_nvim() {
-  command -v docker >/dev/null 2>&1 && echo "NeoVim already installed" && return
+  command -v nvim >/dev/null 2>&1 && echo "NeoVim already installed" && return
 
   add-apt-repository ppa:neovim-ppa/stable && \
     apt update && \
@@ -35,7 +35,7 @@ function install_nvim() {
 
 
 setup_apt && \
-  apt_install curl gimp git htop meld nload pgadmin3 tree cmake python3 python3-dev && \
+  apt_install curl gimp git htop meld nload pgadmin3 tree cmake python3 python3-dev tmuxinator && \
   install_docker && \
   install_nvim && \
   apt -y autoclean && \

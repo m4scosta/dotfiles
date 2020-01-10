@@ -22,6 +22,7 @@ This command will install the following packages:
 - pgadmin3: GUI tool to manage postgresql databases
 - python3: Python3
 - python3-dev: Python3 development headers
+- tmuxinator: Terminal multiplexer
 - tree: Command to list files recursively
 
 The command will also configure neovim and command line aliases.
