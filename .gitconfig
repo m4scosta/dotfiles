@@ -15,10 +15,9 @@
   cam = commit -am
   caa = commit --amend --no-edit
   br = branch
-  ps = push
-  psf = push -f
-  pl = pull
-  f = fetch
+  ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+  f = fetch origin -p
   d = diff
   df = diff --name-only # files
   ds = diff --staged
