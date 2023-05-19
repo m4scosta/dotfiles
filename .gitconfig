@@ -14,7 +14,7 @@
   co = checkout
   cam = commit -am
   caa = commit --amend --no-edit
-  br = branch
+  br = "!git --no-pager branch --sort=committerdate"
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
   f = fetch origin -p
@@ -23,6 +23,8 @@
   ds = diff --staged
   r = reset
   rh = reset --hard
+  nbr = "!f() { git checkout -b marcospinto.$1; }; f"
+  gone-br = "!git fetch -p; git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {sub(\"refs/heads/\", \"\", $1); print $1}' | xargs git br -D"
 
   l = log
   lo = log --oneline
@@ -38,7 +40,7 @@
   unignore = update-index --no-assume-unchanged
   listignored = "!git ls-files -v | grep -e \"^[hsmrck]\""
 
-  wip = "!git add . && git commit -am WIP"
+  wip = "!git add . && git commit --no-verify -am WIP"
 
 [color "status"]
   added = green
@@ -49,4 +51,7 @@
   whitespace = red reverse
 
 [push]
-  default = matching
+  default = current
+
+[mergetool]
+  keepBackup = false
